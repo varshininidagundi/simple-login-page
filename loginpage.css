@@ -1,0 +1,169 @@
+.outer-cnt{
+    display: flex;
+    background-color: rgb(249, 249, 222);
+    width: auto;
+    height: auto;
+    font-size: 18px;
+}
+.inner-cnt{
+    display: flex;
+    flex-direction: column;
+    border-style: solid ;
+    background-color: rgb(252, 251, 249);
+    border-color: rgb(137, 125, 59);
+    border-width: 0.2px;
+    box-shadow: 2px 2px 2px rgb(121, 121, 45);
+    width: 55%;
+    margin-top: 40px;
+    margin-left: 280px;
+    padding: 30px ;
+}
+.title{
+    display: flex;
+    font-size: 24px;
+    color: rgb(99, 8, 218);
+
+}
+.name-gender-dob-lang-cnt{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.name-cnt{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sel-name{
+    height: 35.2px;
+    width: 50px;
+}
+.name{
+    width: 200px;
+    height: 30px;
+}
+.gender-cnt{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.gender-label, .dob-label{
+    width: 15%;
+}
+.gender-input{
+    display: flex;
+    gap: 60px;
+    /* justify-content: space-around; */
+}
+.dob-cnt{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.dob-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+}
+.date, .month, .year{
+    display: flex;
+    flex-direction: row;
+}
+.lang-cnt{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.personDetails-cnt{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.personDetails-title{
+    margin-top: 10px;
+    display: flex;
+    font-size: 21px;
+    color: rgb(99, 8, 218);
+}
+.personDetails-input{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.hobbies-cnt{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.hobbies-label{
+    margin-top: 10px;
+    font-size: 21px;
+    color: rgb(99, 8, 218);
+}
+.hobbies-input{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.hobbies-input1, .hobbies-input2, .hobbies-input3{ 
+    display:flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* gap:30%; */
+}
+.educationDetails-cnt{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.educationDetails-label{
+    margin-top: 10px;
+    color: rgb(99, 8, 218);
+    font-size: 21px;
+}
+.educationDetails-input{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.educationDetails-name{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.educationDetails-name-input{
+    display:flex;
+    flex-direction: column;
+}
+.school-name{
+    width:100%;
+}
+.btn-cnt{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.reset-btn{
+    display:flex;
+    width: 50%;
+}
+.cancel-sumit-btn{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+    gap: 20px;
+}
+.btn{
+    width: 100px;
+    height: 35px;
+    transition: 3s;
+    color: aliceblue;
+}
+.btn:hover{
+    cursor: pointer;
+}
