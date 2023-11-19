@@ -1,169 +1,252 @@
-.outer-cnt{
+
+
+.outer-cnt {
     display: flex;
     background-color: rgb(249, 249, 222);
     width: auto;
     height: auto;
     font-size: 18px;
+    align-items: center;
+    justify-content: center;
 }
-.inner-cnt{
+
+.inner-cnt {
     display: flex;
     flex-direction: column;
-    border-style: solid ;
+    border-style: solid;
     background-color: rgb(252, 251, 249);
     border-color: rgb(137, 125, 59);
     border-width: 0.2px;
     box-shadow: 2px 2px 2px rgb(121, 121, 45);
     width: 55%;
-    margin-top: 40px;
-    margin-left: 280px;
-    padding: 30px ;
+    margin-top: 20px;
+    padding: 30px;
 }
-.title{
+.form-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
     display: flex;
     font-size: 24px;
     color: rgb(99, 8, 218);
 
 }
-.name-gender-dob-lang-cnt{
+
+.name-gender-dob-lang-cnt {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
-.name-cnt{
+
+.name-cnt {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.sel-name{
+
+.sel-name {
     height: 35.2px;
     width: 50px;
 }
-.name{
-    width: 200px;
-    height: 30px;
+
+.name {
+    font-size: 14px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color:  rgb(249, 249, 222);
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+
 }
-.gender-cnt{
+
+.gender-cnt {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
 }
-.gender-label, .dob-label{
+
+.gender-label, .dob-label {
     width: 15%;
 }
-.gender-input{
+
+.lang-label {
+    width: 17%;
+}
+
+.gender-input {
     display: flex;
     gap: 60px;
     /* justify-content: space-around; */
 }
-.dob-cnt{
+
+#male {
+    margin: 0px 0px 0px 0px;
+}
+
+.dob-cnt {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
 }
-.dob-input{
+
+.dob-input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 50px;
 }
-.date, .month, .year{
+#date, #month, #year{
+    width: 80px;
+    height: 30px;
+}
+.date,
+.month,
+.year {
     display: flex;
     flex-direction: row;
 }
-.lang-cnt{
+
+.lang-cnt {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
+}
+
+.lang-input {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
     justify-content: space-between;
 }
-.personDetails-cnt{
+
+.personDetails-cnt {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
-.personDetails-title{
+
+.personDetails-title {
     margin-top: 10px;
     display: flex;
     font-size: 21px;
     color: rgb(99, 8, 218);
 }
-.personDetails-input{
+
+.personDetails-input {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
-.hobbies-cnt{
+.income-cnt{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.income-label{
+    width:20%;
+}
+#income{
+    width: 598px;
+}
+
+.hobbies-cnt {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
-.hobbies-label{
+
+.hobbies-label {
     margin-top: 10px;
     font-size: 21px;
     color: rgb(99, 8, 218);
 }
-.hobbies-input{
+
+.hobbies-input {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 60px;
 }
-.hobbies-input1, .hobbies-input2, .hobbies-input3{ 
-    display:flex;
+
+.hobbies-input1,
+.hobbies-input2,
+.hobbies-input3 {
+    display: flex;
     flex-direction: column;
     /* justify-content: space-around; */
     /* gap:30%; */
 }
-.educationDetails-cnt{
+
+.educationDetails-cnt {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    height: 75px;
 }
-.educationDetails-label{
+
+.educationDetails-label {
     margin-top: 10px;
     color: rgb(99, 8, 218);
     font-size: 21px;
 }
-.educationDetails-input{
+
+.educationDetails-input {
     margin-top: 10px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
-.educationDetails-name{
+
+.educationDetails-name {
     display: flex;
     flex-direction: column;
     text-align: right;
+    justify-content: center;
 }
-.educationDetails-name-input{
-    display:flex;
+
+.educationDetails-name-input {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* flex-grow: 2; */
 }
-.school-name{
-    width:100%;
+
+.school-name {
+    width: 541px;
 }
-.btn-cnt{
+
+.btn-cnt {
     margin-top: 40px;
     display: flex;
     flex-direction: row;
 }
-.reset-btn{
-    display:flex;
+
+.reset-btn {
+    display: flex;
     width: 50%;
 }
-.cancel-sumit-btn{
+
+.cancel-sumit-btn {
     display: flex;
     justify-content: right;
     width: 50%;
     gap: 20px;
 }
-.btn{
-    width: 100px;
-    height: 35px;
+
+.cancel-btn, .r-btn, .submit-btn {
+    width: 110px;
+    height: 40px;
     transition: 3s;
     color: aliceblue;
+    transition: background-color 0.3s;
+    border-color: aliceblue;
 }
-.btn:hover{
+
+.cancel-btn:hover, .r-btn:hover, .submit-btn:hover {
     cursor: pointer;
+    color: white;
+    border-color: black;
 }

@@ -1,0 +1,24 @@
+
+.outer-cnt{
+    background-color: rgb(249, 249, 222);
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-cnt{
+    background-color: white;
+    border: solid;
+    padding: 30px;
+}
+
+.table{
+    border-collapse: collapse;
+}
+.thead {
+    width: 1549px;
+    height: 67px;
+    background: rgb(249, 249, 222) 0% 0% no-repeat padding-box;
+    border-radius: 3px 3px 0px 0px;
+    opacity: 1;
+}
