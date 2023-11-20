@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px;
 }
 .inner-cnt{
     background-color: white;
@@ -21,4 +22,31 @@
     background: rgb(249, 249, 222) 0% 0% no-repeat padding-box;
     border-radius: 3px 3px 0px 0px;
     opacity: 1;
+    text-align: left;
+}
+.thead-slno{
+    width: 60px;
+}
+.thead-name{
+    width: 200px;
+}
+.thead-gender{
+    width:100px;
+}
+.thead-native{
+    width:150px;;
+}
+.thead-dob{
+    width:150px;
+}
+.thead-action{
+    width: 110px;
+}
+.table-body{
+    display: flex;
+    flex-direction: column;
+}
+.icon{
+    height: 17px;
+    width: 17px;
 }

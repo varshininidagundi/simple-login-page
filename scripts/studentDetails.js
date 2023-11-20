@@ -3,7 +3,7 @@ class StudentDetails {
         return this._prefix;
     }
     set prefix(prefix){
-        this._prefix = prefix;
+        this._prefix =prefix
     }
     get firstname() {
         return this._firstname;
@@ -94,5 +94,8 @@ class StudentDetails {
     }
     set hobbies(hobbies){
         this._hobbies = hobbies;
+    }
+    toString(){
+    return  this._firstname+this._college+this._date+this._month+this._lastname+this._middlename+this._middlename+this._year+this._height+this._weight+this._native+this._income+this._hobbies+this._language;
     }
 }

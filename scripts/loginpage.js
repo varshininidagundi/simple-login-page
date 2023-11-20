@@ -4,10 +4,89 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function () {
         output.textContent = salary.value;
     });
+    if (localStorage.getItem('studentEditData')) {
+        editStudentDetails();
+    }
 })
 
+function editStudentDetails() {
+    let editkey = JSON.parse(localStorage.getItem('studentEditData'));
+    document.querySelector('#prefix').value = editkey[0]._prefix;
+    document.querySelector('#firstname').value = editkey[0].firstnamename;
+    document.querySelector('#middlename').value = editkey[0]._middlename;
+    document.querySelector('#lastname').value = editkey[0]._lastname;
+    document.querySelector('#native').value = editkey[0]._native;
+    document.querySelector('#height').value = editkey[0]._height;
+    document.querySelector('#weight').value = editkey[0]._weight;
+    document.querySelector('#school').value = editkey[0]._school;
+    document.querySelector('#college').value = editkey[0]._college;
+    document.querySelector('#date').value = editkey[0]._date;
+    document.querySelector('#month').value = editkey[0]._month;
+    document.querySelector('#year').value = editkey[0]._year;
+    const gender = editkey[0]._gender;
+    document.querySelector('#male').checked = gender === 'male';
+    document.querySelector('#female').checked = gender === 'female';
+    const languageList = editkey[0]._language;
+    const hobbyList = editkey[0]._hobbies;
+    const languageCheckboxes = document.querySelectorAll("[name=language]");
+    languageCheckboxes.forEach((checkbox) => {
+        checkbox.checked = languageList.includes(checkbox.value);
+    });
+    const hobbyCheckboxes = document.querySelectorAll("[name=hobbie]");
+    hobbyCheckboxes.forEach((checkbox) => {
+        checkbox.checked = hobbyList.includes(checkbox.value);
+    });
+    isChecked(hobbyCheckboxes);
+}
+
+const handleResetForm= () => {
+    let prefix = document.querySelector('#prefix').value;
+    prefix.value = "Mr.";
+    let firstname = document.querySelector('#firstname').value;
+    firstname.value = "First Name";
+    let middlename = document.querySelector('#middlename').value;
+    middlename.value = "Middle Name";
+    let lastname = document.querySelector('#lastname').value;
+    lastname.value = "Last Name";
+    let native = document.querySelector('#native').value;
+    native.value = "";
+    let height = document.querySelector('#height').value;
+    height.value = "";
+    let weight = document.querySelector('#weight').value;
+    weight.value = "";
+    let school = document.querySelector('#school').value;
+    school.value = "";
+    let college = document.querySelector('#college').value;
+    college.value = "";
+    let date = document.querySelector('#date').value;
+    date.value = "Day";
+    let month = document.querySelector('#month').value;
+    month.value = "Month";
+    let year = document.querySelector('#year').value;
+    year.value = "Year";
+    const female = document.querySelector('#female');
+    female.checked = false
+    const male = document.querySelector('#male');
+    male.checked = false
+    const language = document.querySelectorAll("[name=language]");
+    isChecked(language)
+    const hobbies = document.querySelectorAll("[name=hobbie]");
+    isChecked(hobbies)
+}
 const handleSubmitForm = (event) => {
     event.preventDefault()
+    if (localStorage.getItem('studentEditData')) {
+        let editkey = JSON.parse(localStorage.getItem('studentEditData'));
+        let studentInformation = JSON.parse(localStorage.getItem('studentData'));
+        const studentInfoFromList = studentInformation.filter(studentObject => studentObject.firstnamename !== editkey[0].firstnamename);
+        let editedStudentData = JSON.stringify(studentInfoFromList);
+        localStorage.setItem("studentData", editedStudentData);
+        localStorage.removeItem("studentEditData")
+    }
+    let dummy = JSON.parse(localStorage.getItem('studentData'))
+    if (!Array.isArray(dummy)) {
+        dummy = [];
+    }
     const studentInformation = new StudentDetails();
     const prefix = document.querySelector('#prefix').value;
     studentInformation.prefix = prefix;
@@ -42,7 +121,16 @@ const handleSubmitForm = (event) => {
     const hobbies = document.querySelectorAll("[name=hobbie]");
     studentInformation.hobbies = checkIsTrue(hobbies, "hobbies");
     console.log(studentInformation);
-    localStorage.setItem("studentData",studentInformation);
+    if (dummy === null) {
+        dummy = [studentInformation];
+    }
+    else {
+        dummy.push(studentInformation);
+    }
+    localStorage.setItem("studentData",JSON.stringify(dummy));
+}
+const handleCancelForm = () => {
+    handleResetForm();
 }
 function checkIsTrue(nodeList, check) {
     let checkedNodeList = [...nodeList].filter((ele) => ele.checked === true)
