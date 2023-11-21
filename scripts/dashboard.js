@@ -24,11 +24,19 @@ function renderTable(studentInformation) {
             <td>${student._date}/${student._month}/${student._year}</td>
             <td class="icon-cnt"><img src="../assests/trash.png" class='icon' studentName="${student.firstnamename}" onclick="deleteStudentByName(event)">
                 <a href="../templet/loginpage.html"><img src="../assests/pencil.png" class="icon" studentName="${student.firstnamename}" onclick="editStudentByName(event)"></a>
-                <a><img src="../assests/view-eye-svgrepo-com.png" class="icon"></a>
+                <a href="../templet/viewcard.html"><img src="../assests/view-eye-svgrepo-com.png" class="icon" class="icon" studentName="${student.firstnamename}" onclick="viewStudentByName(event)"></a>
             </td></tr>
             </div> `
         }
         entryIntoTable.innerHTML = studentValue;
+    }
+}
+function viewStudentByName(event){
+    let studentName = event.target.getAttribute('studentName');
+    if(Array.isArray(storage)){
+        let filteredStudentList = storage.filter((student) => student.firstnamename === studentName);
+        console.log(filteredStudentList,"view data");
+        localStorage.setItem('studentViewData',JSON.stringify(filteredStudentList))
     }
 }
 function deleteStudentByName(event){
