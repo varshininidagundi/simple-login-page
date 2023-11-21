@@ -8,7 +8,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         editStudentDetails();
     }
 })
-
 function editStudentDetails() {
     let editkey = JSON.parse(localStorage.getItem('studentEditData'));
     document.querySelector('#prefix').value = editkey[0]._prefix;
@@ -38,41 +37,33 @@ function editStudentDetails() {
     });
     isChecked(hobbyCheckboxes);
 }
+const handleResetForm = () => {
+    document.querySelector('#prefix').value = "Mr.";
+    document.querySelector('#firstname').value = "First Name";
+    document.querySelector('#middlename').value = "Middle Name";
+    document.querySelector('#lastname').value = "Last Name";
+    document.querySelector('#native').value = "";
+    document.querySelector('#height').value = "";
+    document.querySelector('#weight').value = "";
+    document.querySelector('#school').value = "";
+    document.querySelector('#college').value = "";
+    document.querySelector('#date').value = "Day";
+    document.querySelector('#month').value = "Month";
+    document.querySelector('#year').value = "Year";
 
-const handleResetForm= () => {
-    let prefix = document.querySelector('#prefix').value;
-    prefix.value = "Mr.";
-    let firstname = document.querySelector('#firstname').value;
-    firstname.value = "First Name";
-    let middlename = document.querySelector('#middlename').value;
-    middlename.value = "Middle Name";
-    let lastname = document.querySelector('#lastname').value;
-    lastname.value = "Last Name";
-    let native = document.querySelector('#native').value;
-    native.value = "";
-    let height = document.querySelector('#height').value;
-    height.value = "";
-    let weight = document.querySelector('#weight').value;
-    weight.value = "";
-    let school = document.querySelector('#school').value;
-    school.value = "";
-    let college = document.querySelector('#college').value;
-    college.value = "";
-    let date = document.querySelector('#date').value;
-    date.value = "Day";
-    let month = document.querySelector('#month').value;
-    month.value = "Month";
-    let year = document.querySelector('#year').value;
-    year.value = "Year";
     const female = document.querySelector('#female');
-    female.checked = false
+    female.checked = false;
+
     const male = document.querySelector('#male');
-    male.checked = false
+    male.checked = false;
+
     const language = document.querySelectorAll("[name=language]");
-    isChecked(language)
+    isChecked(language);
+
     const hobbies = document.querySelectorAll("[name=hobbie]");
-    isChecked(hobbies)
-}
+    isChecked(hobbies);
+};
+
 const handleSubmitForm = (event) => {
     event.preventDefault()
     if (localStorage.getItem('studentEditData')) {
@@ -82,6 +73,14 @@ const handleSubmitForm = (event) => {
         let editedStudentData = JSON.stringify(studentInfoFromList);
         localStorage.setItem("studentData", editedStudentData);
         localStorage.removeItem("studentEditData")
+    }
+    if(localStorage.getItem('studentViewData')){
+        let editkey = JSON.parse(localStorage.getItem('studentViewData'));
+        let studentInformation = JSON.parse(localStorage.getItem('studentData'));
+        const studentInfoFromList = studentInformation.filter(studentObject => studentObject.firstnamename !== editkey[0].firstnamename);
+        let editedStudentData = JSON.stringify(studentInfoFromList);
+        localStorage.setItem("studentData", editedStudentData);
+        localStorage.removeItem("studentViewData")
     }
     let dummy = JSON.parse(localStorage.getItem('studentData'))
     if (!Array.isArray(dummy)) {

@@ -1,18 +1,15 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    if (edit-btn) {
 
-        document.getElementById('editBtn').addEventListener('click', function() {
+    const editButton = document.getElementById('edit-btn'); // Corrected ID name
+    if (editButton) {
+        editButton.addEventListener('click', function() {
             let viewData = JSON.parse(localStorage.getItem('studentViewData'));
             localStorage.setItem('studentEditData', JSON.stringify(viewData));
+            localStorage.removeItem('studentViewData');
             window.location.href = '../templet/loginpage.html';
-            // Perform action when the Edit button is clicked
-            // Redirect or navigate to the edit page or perform specific action
-            // For example:
-            // window.location.href = "edit-page.html"; // Redirect to the edit page
         });
     }
 });
-
 let viewData = JSON.parse(localStorage.getItem('studentViewData'));
 let entryIntoTable = document.querySelector("#viewDisplay");
 let langList=viewData[0]._language;
@@ -33,9 +30,7 @@ if (viewData && viewData.length > 0) {
     <h3>College Name: ${viewData[0]._college}</h3>
     <h3>Height: ${viewData[0]._height}</h3>
     <h3>Weight: ${viewData[0]._weight}</h3>`
-
     entryIntoTable.innerHTML = data;
-    console.log(data);
 } else {
     console.log("No data found in localStorage");
 }

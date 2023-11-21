@@ -11,7 +11,7 @@
 
 <body class="outer-cnt">
     <div class="inner-cnt">
-        <form class="form-body" action="#" onreset="handleResetForm()" onsubmit="handleSubmitForm(event)" oncancel="handleCancelForm()">
+        <form class="form-body" action="#" onsubmit="handleSubmitForm(event)">
             <div class="title">Student Registration Form</div>
             <div class="name-gender-dob-lang-cnt">
                 <div class="name-cnt">
@@ -174,11 +174,11 @@
                 </div>
             </div>
             <div class="btn-cnt">
-                <div class="reset-btn"><button class="r-btn" style="background-color: rgb(133, 129, 129);">Reset</button>
+                <div class="reset-btn"><button class="r-btn" style="background-color: rgb(133, 129, 129);" type="reset" onclick="handleResetForm()">Reset</button>
                 </div>
                 <div class="cancel-sumit-btn">
                     <div style="display: flex;"><button class="cancel-btn"
-                            style="background-color: rgb(224, 154, 154);">Cancel</button></div>
+                            style="background-color: rgb(224, 154, 154);"  type="button" onclick="handleCancelForm()">Cancel</button></div>
                     <div style="display: flex;"><button class="submit-btn"
                             style="background-color: rgb(181, 225, 115);">Submit</button></div>
                 </div>

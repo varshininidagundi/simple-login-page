@@ -4,13 +4,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log(storage);
     renderTable(storage);
 });
-
 function renderTable(studentInformation) {
     let entryIntoTable = document.querySelector("#table-body");
-    // console.log(typeof employeeInformation);
     if (studentInformation === null) {
         console.log('employee information is null');
-
     } else {
         let studentValue = "";
         let count = 0;
