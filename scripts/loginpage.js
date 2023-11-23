@@ -31,7 +31,7 @@ function editStudentDetails() {
     languageCheckboxes.forEach((checkbox) => {
         checkbox.checked = languageList.includes(checkbox.value);
     });
-    const hobbyCheckboxes = document.querySelectorAll("[name=hobbie]");
+    const hobbyCheckboxes = document.querySelectorAll("[name=hobbies]");
     hobbyCheckboxes.forEach((checkbox) => {
         checkbox.checked = hobbyList.includes(checkbox.value);
     });
@@ -50,7 +50,6 @@ const handleResetForm = () => {
     document.querySelector('#date').value = "Day";
     document.querySelector('#month').value = "Month";
     document.querySelector('#year').value = "Year";
-
     const female = document.querySelector('#female');
     female.checked = false;
 
